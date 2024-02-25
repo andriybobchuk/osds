@@ -9,27 +9,26 @@ const renderer = ({ days, hours, minutes, seconds, completed, props }) => {
 
   return (
     <div className="col">
-      <div className="card shadow-sm">
+      <div className="card rounded-2xl">
         <div
           style={{
-            height: '320px',
             backgroundImage: `url(${props.item.imgUrl})`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
           }}
-          className="w-100"
+          className="corner-2xl flex flex-col h-56"
         />
 
         <div className="card-body">
-          <p className="lead display-6">{props.item.title}</p>
-          <div className="d-flex jsutify-content-between align-item-center">
+          <p className="text-xl font-bold">{props.item.title}</p>
+          <div className="d-flex jsutify-content-between align-item-center text-sm">
             <h5>
-              {days * 24 + hours} hr: {minutes} min: {seconds} sec
+              {days * 24 + hours} hr {minutes} min {seconds} sec
             </h5>
           </div>
-          <p className="card-text">{props.item.desc}</p>
-          <div className="d-flex justify-content-between align-item-center">
+          <p className="text-sm">{props.item.desc}</p>
+          <div className="d-flex justify-content-between align-item-center ">
             <div>
               {!props.owner ? (
                 <div
@@ -46,7 +45,7 @@ const renderer = ({ days, hours, minutes, seconds, completed, props }) => {
                   Cancel Auction
                 </div>
               ) : props.owner.email === props.item.curWinner ? (
-                <p className="display-6">Winner</p>
+                <p className="text-xl">Winner</p>
               ) : (
                 <div
                   onClick={() =>
@@ -58,7 +57,7 @@ const renderer = ({ days, hours, minutes, seconds, completed, props }) => {
                 </div>
               )}
             </div>
-            <p className="display-6">${props.item.curPrice}</p>
+            <p className="text-2xl">{props.item.curPrice}zł</p>
           </div>
         </div>
       </div>

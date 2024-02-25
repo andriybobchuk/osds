@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/images/osdslogo.svg';
 import { AuthContext } from '../../context/AuthContext';
 import { LoginComp } from './LoginComp';
 import { RegisterComp } from './RegisterComp';
@@ -8,10 +8,10 @@ export const NavComp = () => {
   const { currentUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="container navbar sticky-top navbar-light bg-light">
+    <nav className="container navbar sticky-top navbar-light bg-white border border-black">
       <div className="container-fluid">
         <div className="navbar-brand">
-          <img src={logoImg} alt="logo" height="75" />
+          <img src={logoImg} alt="logo" style={{ width: '46px', height: 'auto' }} />
         </div>
         <div className="d-flex">
           <div className="col">
@@ -39,3 +39,5 @@ export const NavComp = () => {
     </nav>
   );
 };
+
+
